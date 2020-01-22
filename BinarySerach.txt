@@ -1,0 +1,43 @@
+class BinarySerach{
+  
+  int Binary(int arr[],int x){
+  int c = 0;
+  int n = arr.length -1;
+   
+    while( c <= n){
+      
+  int m = c +(n-c)/2;
+      // if x is present at mid
+      if(arr[m] == x)
+        return m; 
+      // If x greater ignore left  
+      if(arr[m] < x)
+        c= m + 1;
+      // If x is smaller ignore right 
+      else
+        // not present 
+        n= m - 1;  
+   
+    }
+   
+  return -1;
+  
+  }
+
+  
+public static void main(String args[]){
+
+BinarySerach ob =  new BinarySerach();
+  int arr[]={1,4,9,14,20,22,100};
+  int x=9;
+  int n=arr.length;
+  int res=ob.Binary(arr,x);
+  if(res==-1)
+    System.out.println("Element not present");
+
+  else
+    System.out.println("Element found at "+ "index " + res);
+
+
+}
+}
